@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionnaire Anglais-Français - Termes Techniques</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .search-highlight {
+        background-color: #fef3cd;
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
+      .category-icon {
+        transition: transform 0.2s ease;
+      }
+      .category-icon:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- En-tête -->
+    <header
+      class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white shadow-lg"
+    >
+      <div class="container mx-auto px-4 py-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center space-x-3 mb-4 md:mb-0">
+            <i class="fas fa-language text-3xl"></i>
+            <div>
+              <h1 class="text-2xl font-bold">Dictionnaire Technique</h1>
+              <p class="text-blue-200">Anglais - Français</p>
+            </div>
+          </div>
+          <nav class="flex space-x-6">
+            <a href="index.html" class="hover:text-blue-300 transition-colors"
+              >Accueil</a
+            >
+            <a href="cejm.html" class="hover:text-blue-300 transition-colors"
+              >CEJM</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Barre de recherche -->
+    <div class="container mx-auto px-4 py-8">
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <div class="text-center mb-6">
+          <h2 class="text-3xl font-bold text-gray-800 mb-2">
+            Dictionnaire Technique Anglais-Français
+          </h2>
+          <p class="text-gray-600">
+            Recherchez un terme technique en anglais ou en français
+          </p>
+        </div>
+
+        <div class="relative max-w-2xl mx-auto">
+          <div class="relative">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Rechercher un terme (anglais ou français)..."
+              class="w-full px-4 py-3 pl-12 pr-10 text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+            <div class="absolute left-4 top-3.5 text-gray-400">
+              <i class="fas fa-search"></i>
+            </div>
+            <button
+              id="clearSearch"
+              class="absolute right-4 top-3.5 text-gray-400 hover:text-gray-600 hidden"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div
+            id="searchResults"
+            class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-96 overflow-y-auto hidden"
+          ></div>
+        </div>
+
+        <div class="mt-4 text-center">
+          <p class="text-sm text-gray-500">
+            Exemples: "IoT", "domotique", "cybersecurity", "sécurité
+            informatique"
+          </p>
+        </div>
+      </div>
+
+      <!-- Catégories -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <!-- IoT -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 category-card"
+          data-category="iot"
+        >
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-lg mr-4 category-icon">
+              <i class="fas fa-link text-blue-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">
+              IoT & Objets Connectés
+            </h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Termes relatifs à l'Internet des Objets et aux appareils connectés
+          </p>
+          <div class="text-sm text-gray-500">
+            <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded"
+              >12 termes</span
+            >
+          </div>
+        </div>
+
+        <!-- BYOD -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 category-card"
+          data-category="byod"
+        >
+          <div class="flex items-center mb-4">
+            <div class="bg-green-100 p-3 rounded-lg mr-4 category-icon">
+              <i class="fas fa-mobile-alt text-green-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">BYOD & Mobile</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Appareils personnels et gestion mobile en entreprise
+          </p>
+          <div class="text-sm text-gray-500">
+            <span class="bg-green-50 text-green-700 px-2 py-1 rounded"
+              >11 termes</span
+            >
+          </div>
+        </div>
+
+        <!-- IA -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 category-card"
+          data-category="ia"
+        >
+          <div class="flex items-center mb-4">
+            <div class="bg-purple-100 p-3 rounded-lg mr-4 category-icon">
+              <i class="fas fa-robot text-purple-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">
+              Intelligence Artificielle
+            </h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Machine learning, deep learning et automatisation
+          </p>
+          <div class="text-sm text-gray-500">
+            <span class="bg-purple-50 text-purple-700 px-2 py-1 rounded"
+              >10 termes</span
+            >
+          </div>
+        </div>
+
+        <!-- Motivation -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 category-card"
+          data-category="motivation"
+        >
+          <div class="flex items-center mb-4">
+            <div class="bg-yellow-100 p-3 rounded-lg mr-4 category-icon">
+              <i class="fas fa-trophy text-yellow-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">
+              Motivation & Bien-être
+            </h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Culture d'entreprise et qualité de vie au travail
+          </p>
+          <div class="text-sm text-gray-500">
+            <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded"
+              >11 termes</span
+            >
+          </div>
+        </div>
+
+        <!-- Cybersecurity -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 category-card"
+          data-category="cybersecurity"
+        >
+          <div class="flex items-center mb-4">
+            <div class="bg-red-100 p-3 rounded-lg mr-4 category-icon">
+              <i class="fas fa-shield-alt text-red-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Cybersécurité</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Protection des systèmes et données informatiques
+          </p>
+          <div class="text-sm text-gray-500">
+            <span class="bg-red-50 text-red-700 px-2 py-1 rounded"
+              >10 termes</span
+            >
+          </div>
+        </div>
+
+        <!-- Cloud -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 category-card"
+          data-category="cloud"
+        >
+          <div class="flex items-center mb-4">
+            <div class="bg-indigo-100 p-3 rounded-lg mr-4 category-icon">
+              <i class="fas fa-cloud text-indigo-600 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Cloud Computing</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Virtualisation et services informatiques dématérialisés
+          </p>
+          <div class="text-sm text-gray-500">
+            <span class="bg-indigo-50 text-indigo-700 px-2 py-1 rounded"
+              >10 termes</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Dictionnaire complet -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+          Dictionnaire Complet
+        </h2>
+
+        <div id="dictionaryContent">
+          <!-- Le contenu sera généré dynamiquement par JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Base de données des termes
+      const dictionary = [
+        // IoT
+        {
+          en: "IoT (Internet of Things)",
+          fr: "Internet des Objets",
+          category: "iot",
+        },
+        { en: "connected sensors", fr: "capteurs connectés", category: "iot" },
+        { en: "smart home", fr: "maison intelligente", category: "iot" },
+        { en: "smart objects", fr: "objets intelligents", category: "iot" },
+        { en: "automation", fr: "automatisation", category: "iot" },
+        {
+          en: "edge computing",
+          fr: "informatique en périphérie",
+          category: "iot",
+        },
+        { en: "connectivity", fr: "connectivité", category: "iot" },
+        {
+          en: "wearable devices",
+          fr: "dispositifs portables",
+          category: "iot",
+        },
+        { en: "home automation", fr: "domotique", category: "iot" },
+        { en: "mesh networks", fr: "réseaux maillés", category: "iot" },
+        { en: "smart meters", fr: "compteurs intelligents", category: "iot" },
+        { en: "geolocation", fr: "géolocalisation", category: "iot" },
+        { en: "firmware", fr: "micrologiciel", category: "iot" },
+        { en: "telemetry", fr: "télémétrie", category: "iot" },
+        { en: "interoperability", fr: "interopérabilité", category: "iot" },
+
+        // BYOD
+        {
+          en: "BYOD (Bring Your Own Device)",
+          fr: "Apportez Votre Appareil Personnel",
+          category: "byod",
+        },
+        {
+          en: "personal devices",
+          fr: "appareils personnels",
+          category: "byod",
+        },
+        {
+          en: "security policies",
+          fr: "politiques de sécurité",
+          category: "byod",
+        },
+        {
+          en: "MDM (Mobile Device Management)",
+          fr: "Gestion des Appareils Mobiles",
+          category: "byod",
+        },
+        { en: "remote access", fr: "accès distant", category: "byod" },
+        {
+          en: "network segmentation",
+          fr: "segmentation du réseau",
+          category: "byod",
+        },
+        { en: "shadow IT", fr: "IT fantôme", category: "byod" },
+        { en: "VPN", fr: "Réseau Privé Virtuel", category: "byod" },
+        { en: "authentication", fr: "authentification", category: "byod" },
+        {
+          en: "IT compliance",
+          fr: "conformité informatique",
+          category: "byod",
+        },
+        { en: "mobile containers", fr: "conteneurs mobiles", category: "byod" },
+
+        // IA
+        {
+          en: "AI / Artificial Intelligence",
+          fr: "Intelligence Artificielle",
+          category: "ia",
+        },
+        {
+          en: "machine learning",
+          fr: "apprentissage automatique",
+          category: "ia",
+        },
+        { en: "deep learning", fr: "apprentissage profond", category: "ia" },
+        { en: "neural networks", fr: "réseaux neuronaux", category: "ia" },
+        { en: "automation", fr: "automatisation", category: "ia" },
+        {
+          en: "augmented decision making",
+          fr: "prise de décision augmentée",
+          category: "ia",
+        },
+        {
+          en: "NLP (Natural Language Processing)",
+          fr: "Traitement du Langage Naturel",
+          category: "ia",
+        },
+        { en: "generative models", fr: "modèles génératifs", category: "ia" },
+        {
+          en: "predictive algorithms",
+          fr: "algorithmes prédictifs",
+          category: "ia",
+        },
+        { en: "computer vision", fr: "vision par ordinateur", category: "ia" },
+        { en: "conversational AI", fr: "IA conversationnelle", category: "ia" },
+
+        // Motivation
+        {
+          en: "corporate culture",
+          fr: "culture d'entreprise",
+          category: "motivation",
+        },
+        {
+          en: "professional recognition",
+          fr: "reconnaissance professionnelle",
+          category: "motivation",
+        },
+        {
+          en: "participative management",
+          fr: "management participatif",
+          category: "motivation",
+        },
+        {
+          en: "well-being at work",
+          fr: "bien-être au travail",
+          category: "motivation",
+        },
+        { en: "flexibility", fr: "flexibilité", category: "motivation" },
+        { en: "remote work", fr: "télétravail", category: "motivation" },
+        {
+          en: "social benefits",
+          fr: "avantages sociaux",
+          category: "motivation",
+        },
+        { en: "bonuses", fr: "primes", category: "motivation" },
+        {
+          en: "continuous training",
+          fr: "formation continue",
+          category: "motivation",
+        },
+        {
+          en: "work-life balance",
+          fr: "équilibre vie pro / vie perso",
+          category: "motivation",
+        },
+        {
+          en: "employee engagement",
+          fr: "engagement salarié",
+          category: "motivation",
+        },
+
+        // Cybersecurity
+        { en: "firewall", fr: "pare-feu", category: "cybersecurity" },
+        { en: "encryption", fr: "chiffrement", category: "cybersecurity" },
+        {
+          en: "multi-factor authentication",
+          fr: "authentification multifactorielle",
+          category: "cybersecurity",
+        },
+        {
+          en: "identity management",
+          fr: "gestion des identités",
+          category: "cybersecurity",
+        },
+        {
+          en: "SOC (Security Operations Center)",
+          fr: "Centre des Opérations de Sécurité",
+          category: "cybersecurity",
+        },
+        {
+          en: "security audit",
+          fr: "audit de sécurité",
+          category: "cybersecurity",
+        },
+        {
+          en: "security vulnerability",
+          fr: "faille de sécurité",
+          category: "cybersecurity",
+        },
+        { en: "honeypot", fr: "pot de miel", category: "cybersecurity" },
+        {
+          en: "patch management",
+          fr: "gestion des correctifs",
+          category: "cybersecurity",
+        },
+        {
+          en: "intrusion detection system",
+          fr: "système de détection d'intrusion",
+          category: "cybersecurity",
+        },
+
+        // Cloud Computing
+        { en: "virtualization", fr: "virtualisation", category: "cloud" },
+        {
+          en: "SaaS / PaaS / IaaS",
+          fr: "Logiciel / Plateforme / Infrastructure en tant que Service",
+          category: "cloud",
+        },
+        { en: "remote servers", fr: "serveurs distants", category: "cloud" },
+        { en: "containers", fr: "conteneurs", category: "cloud" },
+        { en: "Kubernetes", fr: "Kubernetes", category: "cloud" },
+        { en: "scalability", fr: "scalabilité", category: "cloud" },
+        { en: "online storage", fr: "stockage en ligne", category: "cloud" },
+        {
+          en: "high availability",
+          fr: "haute disponibilité",
+          category: "cloud",
+        },
+        { en: "orchestration", fr: "orchestration", category: "cloud" },
+        { en: "data centers", fr: "centres de données", category: "cloud" },
+
+        // Autres catégories avec quelques termes supplémentaires
+        { en: "productivity", fr: "productivité", category: "work" },
+        { en: "project management", fr: "gestion de projet", category: "work" },
+        { en: "collaboration", fr: "collaboration", category: "work" },
+        {
+          en: "carbon footprint",
+          fr: "empreinte carbone",
+          category: "climate",
+        },
+        { en: "CO₂ emissions", fr: "émissions de CO₂", category: "climate" },
+        {
+          en: "smart thermostats",
+          fr: "thermostats intelligents",
+          category: "smarthome",
+        },
+        {
+          en: "facial recognition",
+          fr: "reconnaissance faciale",
+          category: "surveillance",
+        },
+        { en: "ransomware", fr: "rançongiciel", category: "malware" },
+        {
+          en: "DDoS",
+          fr: "Attaque par Déni de Service Distribué",
+          category: "cyberattacks",
+        },
+        { en: "e-waste", fr: "déchets électroniques", category: "ewaste" },
+        {
+          en: "electronic recycling",
+          fr: "recyclage électronique",
+          category: "ewaste",
+        },
+      ];
+
+      // Catégories avec leurs informations
+      const categories = {
+        iot: { name: "IoT & Objets Connectés", icon: "🔗", color: "blue" },
+        byod: { name: "BYOD & Mobile", icon: "📱", color: "green" },
+        ia: { name: "Intelligence Artificielle", icon: "🤖", color: "purple" },
+        motivation: {
+          name: "Motivation & Bien-être",
+          icon: "💼",
+          color: "yellow",
+        },
+        cybersecurity: { name: "Cybersécurité", icon: "🔐", color: "red" },
+        cloud: { name: "Cloud Computing", icon: "☁️", color: "indigo" },
+        work: { name: "Travail", icon: "🏢", color: "gray" },
+        climate: {
+          name: "Changement Climatique",
+          icon: "🌍",
+          color: "emerald",
+        },
+        smarthome: { name: "Maisons Intelligentes", icon: "🏠", color: "pink" },
+        surveillance: { name: "Surveillance IA", icon: "🛰️", color: "orange" },
+        malware: { name: "Malware & Virus", icon: "🦠", color: "rose" },
+        cyberattacks: { name: "Cyberattaques", icon: "⚠️", color: "red" },
+        ewaste: { name: "Déchets Électroniques", icon: "♻️", color: "green" },
+      };
+
+      // Éléments DOM
+      const searchInput = document.getElementById("searchInput");
+      const searchResults = document.getElementById("searchResults");
+      const clearSearch = document.getElementById("clearSearch");
+      const dictionaryContent = document.getElementById("dictionaryContent");
+      const categoryCards = document.querySelectorAll(".category-card");
+
+      // Afficher le dictionnaire complet au chargement
+      function displayFullDictionary() {
+        let html = "";
+
+        // Grouper les termes par catégorie
+        const termsByCategory = {};
+        dictionary.forEach((term) => {
+          if (!termsByCategory[term.category]) {
+            termsByCategory[term.category] = [];
+          }
+          termsByCategory[term.category].push(term);
+        });
+
+        // Générer le HTML pour chaque catégorie
+        Object.keys(termsByCategory).forEach((category) => {
+          const categoryInfo = categories[category];
+          if (categoryInfo) {
+            html += `
+                        <div class="mb-8">
+                            <div class="flex items-center mb-4">
+                                <span class="text-2xl mr-3">${categoryInfo.icon}</span>
+                                <h3 class="text-xl font-bold text-gray-800">${categoryInfo.name}</h3>
+                                <span class="ml-2 bg-${categoryInfo.color}-100 text-${categoryInfo.color}-800 text-sm px-2 py-1 rounded">${termsByCategory[category].length} termes</span>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    `;
+
+            termsByCategory[category].forEach((term) => {
+              html += `
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <div class="font-medium text-gray-900">${term.en}</div>
+                                <div class="text-gray-600 mt-1">${term.fr}</div>
+                            </div>
+                        `;
+            });
+
+            html += `
+                            </div>
+                        </div>
+                    `;
+          }
+        });
+
+        dictionaryContent.innerHTML = html;
+      }
+
+      // Recherche de termes
+      function searchTerms(query) {
+        if (!query.trim()) {
+          searchResults.classList.add("hidden");
+          return;
+        }
+
+        const lowerQuery = query.toLowerCase();
+        const results = dictionary.filter(
+          (term) =>
+            term.en.toLowerCase().includes(lowerQuery) ||
+            term.fr.toLowerCase().includes(lowerQuery)
+        );
+
+        if (results.length > 0) {
+          let html = "";
+          results.forEach((term) => {
+            const categoryInfo = categories[term.category];
+            const highlightedEn = term.en.replace(
+              new RegExp(query, "gi"),
+              (match) => `<span class="search-highlight">${match}</span>`
+            );
+            const highlightedFr = term.fr.replace(
+              new RegExp(query, "gi"),
+              (match) => `<span class="search-highlight">${match}</span>`
+            );
+
+            html += `
+                        <div class="p-3 border-b border-gray-200 hover:bg-gray-50 cursor-pointer search-result">
+                            <div class="font-medium">${highlightedEn}</div>
+                            <div class="text-gray-600 text-sm">${highlightedFr}</div>
+                            <div class="text-xs text-gray-400 mt-1">${
+                              categoryInfo ? categoryInfo.name : "Autre"
+                            }</div>
+                        </div>
+                    `;
+          });
+
+          searchResults.innerHTML = html;
+          searchResults.classList.remove("hidden");
+
+          // Ajouter les événements de clic sur les résultats
+          document
+            .querySelectorAll(".search-result")
+            .forEach((result, index) => {
+              result.addEventListener("click", () => {
+                searchInput.value = results[index].en;
+                searchResults.classList.add("hidden");
+              });
+            });
+        } else {
+          searchResults.innerHTML = `
+                    <div class="p-4 text-center text-gray-500">
+                        Aucun résultat trouvé pour "${query}"
+                    </div>
+                `;
+          searchResults.classList.remove("hidden");
+        }
+      }
+
+      // Filtrer par catégorie
+      function filterByCategory(category) {
+        const categoryInfo = categories[category];
+        if (!categoryInfo) return;
+
+        const filteredTerms = dictionary.filter(
+          (term) => term.category === category
+        );
+
+        let html = `
+                <div class="mb-6">
+                    <button id="backToAll" class="flex items-center text-blue-600 hover:text-blue-800 mb-4">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Retour au dictionnaire complet
+                    </button>
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl mr-3">${categoryInfo.icon}</span>
+                        <h2 class="text-2xl font-bold text-gray-800">${categoryInfo.name}</h2>
+                        <span class="ml-2 bg-${categoryInfo.color}-100 text-${categoryInfo.color}-800 text-sm px-2 py-1 rounded">${filteredTerms.length} termes</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            `;
+
+        filteredTerms.forEach((term) => {
+          html += `
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <div class="font-medium text-gray-900">${term.en}</div>
+                        <div class="text-gray-600 mt-1">${term.fr}</div>
+                    </div>
+                `;
+        });
+
+        html += `</div>`;
+        dictionaryContent.innerHTML = html;
+
+        // Ajouter l'événement au bouton retour
+        document
+          .getElementById("backToAll")
+          .addEventListener("click", displayFullDictionary);
+      }
+
+      // Événements
+      searchInput.addEventListener("input", (e) => {
+        const query = e.target.value;
+        if (query) {
+          clearSearch.classList.remove("hidden");
+          searchTerms(query);
+        } else {
+          clearSearch.classList.add("hidden");
+          searchResults.classList.add("hidden");
+        }
+      });
+
+      clearSearch.addEventListener("click", () => {
+        searchInput.value = "";
+        clearSearch.classList.add("hidden");
+        searchResults.classList.add("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !searchInput.contains(e.target) &&
+          !searchResults.contains(e.target)
+        ) {
+          searchResults.classList.add("hidden");
+        }
+      });
+
+      // Événements pour les cartes de catégories
+      categoryCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          const category = card.getAttribute("data-category");
+          filterByCategory(category);
+        });
+      });
+
+      // Initialisation
+      displayFullDictionary();
+    </script>
+  </body>
+</html>

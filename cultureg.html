@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CultureG - Animaux dans la Culture Populaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .title-font {
+        font-family: "Playfair Display", serif;
+      }
+      .animal-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .animal-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .category-badge {
+        transition: all 0.3s ease;
+      }
+      .category-badge:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-b from-gray-50 to-gray-100">
+    <!-- En-tête -->
+    <header
+      class="bg-gradient-to-r from-green-800 via-green-600 to-emerald-600 text-white shadow-lg"
+    >
+      <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center space-x-4 mb-6 md:mb-0">
+            <div class="bg-white p-3 rounded-full">
+              <i class="fas fa-paw text-green-600 text-3xl"></i>
+            </div>
+            <div>
+              <h1 class="title-font text-4xl md:text-5xl font-bold">
+                CultureG
+              </h1>
+              <p class="text-green-100 text-lg md:text-xl">
+                Animaux dans la Culture Populaire
+              </p>
+            </div>
+          </div>
+          <div class="text-center md:text-right">
+            <p class="text-green-100 italic">
+              "Des mythes antiques aux memes internet"
+            </p>
+            <div class="flex space-x-4 mt-3 justify-center md:justify-end">
+              <span class="bg-green-800 px-3 py-1 rounded-full text-sm"
+                >Films</span
+              >
+              <span class="bg-green-800 px-3 py-1 rounded-full text-sm"
+                >Livres</span
+              >
+              <span class="bg-green-800 px-3 py-1 rounded-full text-sm"
+                >Séries</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Introduction -->
+    <section class="container mx-auto px-4 py-8">
+      <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+        <div class="flex items-center mb-6">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <i class="fas fa-book-open text-green-600 text-2xl"></i>
+          </div>
+          <h2 class="title-font text-3xl font-bold text-gray-800">
+            Bienvenue dans l'univers CultureG
+          </h2>
+        </div>
+        <p class="text-gray-700 text-lg mb-4">
+          Explorez comment les animaux ont marqué notre culture à travers les
+          films, livres, dessins animés, anecdotes historiques et actualités.
+          Des héros de Disney aux légendes mythologiques, découvrez les
+          références qui ont façonné notre imaginaire collectif.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <span
+            class="category-badge bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium"
+          >
+            <i class="fas fa-film mr-2"></i>Cinéma
+          </span>
+          <span
+            class="category-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium"
+          >
+            <i class="fas fa-book mr-2"></i>Littérature
+          </span>
+          <span
+            class="category-badge bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium"
+          >
+            <i class="fas fa-tv mr-2"></i>Animation
+          </span>
+          <span
+            class="category-badge bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-medium"
+          >
+            <i class="fas fa-history mr-2"></i>Histoire
+          </span>
+          <span
+            class="category-badge bg-red-100 text-red-800 px-4 py-2 rounded-full font-medium"
+          >
+            <i class="fas fa-newspaper mr-2"></i>Actualités
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animaux par catégorie -->
+    <main class="container mx-auto px-4 py-8">
+      <!-- Navigation par catégorie -->
+      <div class="mb-12">
+        <h2
+          class="title-font text-3xl font-bold text-gray-800 mb-6 text-center"
+        >
+          Parcourir par Animal
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <a
+            href="#chiens"
+            class="category-badge bg-yellow-100 hover:bg-yellow-200 text-yellow-800 px-4 py-3 rounded-xl font-medium text-center transition-all"
+          >
+            <i class="fas fa-dog mb-2 block text-xl"></i>Chiens
+          </a>
+          <a
+            href="#chats"
+            class="category-badge bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-3 rounded-xl font-medium text-center transition-all"
+          >
+            <i class="fas fa-cat mb-2 block text-xl"></i>Chats
+          </a>
+          <a
+            href="#ours"
+            class="category-badge bg-orange-100 hover:bg-orange-200 text-orange-800 px-4 py-3 rounded-xl font-medium text-center transition-all"
+          >
+            <i class="fas fa-paw mb-2 block text-xl"></i>Ours
+          </a>
+          <a
+            href="#singes"
+            class="category-badge bg-green-200 hover:bg-green-200 text-brown-800 px-4 py-3 rounded-xl font-medium text-center transition-all"
+          >
+            <i class="fas fa-person mb-2 block text-xl"></i>Singes
+          </a>
+          <a
+            href="#oiseaux"
+            class="category-badge bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-3 rounded-xl font-medium text-center transition-all"
+          >
+            <i class="fas fa-dove mb-2 block text-xl"></i>Oiseaux
+          </a>
+          <a
+            href="#chevaux"
+            class="category-badge bg-red-100 hover:bg-red-200 text-red-800 px-4 py-3 rounded-xl font-medium text-center transition-all"
+          >
+            <i class="fas fa-horse mb-2 block text-xl"></i>Chevaux
+          </a>
+        </div>
+      </div>
+
+      <!-- Section Chiens -->
+      <section id="chiens" class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="bg-yellow-100 p-3 rounded-full mr-4">
+            <i class="fas fa-dog text-yellow-600 text-2xl"></i>
+          </div>
+          <h2 class="title-font text-3xl font-bold text-gray-800">
+            Les Chiens dans la Culture
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="animal-card bg-white rounded-2xl shadow-md overflow-hidden"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1554456854-55a089fd4cb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Lassie"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                Cinéma
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Lassie</h3>
+              <p class="text-gray-600 mb-4">
+                Le colley le plus célèbre du cinéma, apparu pour la première
+                fois en 1943.
+              </p>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-700 mb-2">Références :</h4>
+                <ul
+                  class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                >
+                  <li>Film : "Lassie" (1943) et ses nombreuses suites</li>
+                  <li>Série TV : "Lassie" (1954-1973)</li>
+                  <li>Livre : "Lassie Come-Home" d'Eric Knight</li>
+                  <li>Anectode : Joué par plusieurs chiens successifs</li>
+                </ul>
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                <span class="font-medium">Icône culturelle</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="animal-card bg-white rounded-2xl shadow-md overflow-hidden"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1568572933382-74d440642117?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Snoopy"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                BD
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Snoopy</h3>
+              <p class="text-gray-600 mb-4">
+                Le beagle philosophe de la bande dessinée Peanuts.
+              </p>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-700 mb-2">Références :</h4>
+                <ul
+                  class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                >
+                  <li>BD : "Peanuts" de Charles M. Schulz (1950-2000)</li>
+                  <li>Film : "Snoopy et les Peanuts" (2015)</li>
+                  <li>Statue : Exposée au Musée Schulz</li>
+                  <li>NASA : Mascotte de la mission Apollo 10</li>
+                </ul>
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-pen-nib text-blue-400 mr-1"></i>
+                <span class="font-medium">Personnage littéraire</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="animal-card bg-white rounded-2xl shadow-md overflow-hidden"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Hachiko"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                Histoire Réelle
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Hachikō</h3>
+              <p class="text-gray-600 mb-4">
+                Le chien Akita japonais symbole de fidélité éternelle.
+              </p>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-700 mb-2">Références :</h4>
+                <ul
+                  class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                >
+                  <li>Film : "Hachi: A Dog's Tale" (2009)</li>
+                  <li>Statue : À la gare de Shibuya, Tokyo</li>
+                  <li>Musée : Naturalisé au Musée National de Tokyo</li>
+                  <li>Culture : Journée Hachikō le 8 avril au Japon</li>
+                </ul>
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-landmark text-red-400 mr-1"></i>
+                <span class="font-medium">Histoire vraie</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Chats -->
+      <section id="chats" class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="bg-gray-100 p-3 rounded-full mr-4">
+            <i class="fas fa-cat text-gray-600 text-2xl"></i>
+          </div>
+          <h2 class="title-font text-3xl font-bold text-gray-800">
+            Les Chats dans la Culture
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="animal-card bg-white rounded-2xl shadow-md overflow-hidden"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Garfield"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                BD
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Garfield</h3>
+              <p class="text-gray-600 mb-4">
+                Le chat orange paresseux et amateur de lasagnes.
+              </p>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-700 mb-2">Références :</h4>
+                <ul
+                  class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                >
+                  <li>BD : "Garfield" de Jim Davis (depuis 1978)</li>
+                  <li>Films : "Garfield" (2004) et "Garfield 2" (2006)</li>
+                  <li>Série TV : "Garfield and Friends" (1988-1994)</li>
+                  <li>Record : 2 580 journaux dans le monde</li>
+                </ul>
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-hamburger text-orange-400 mr-1"></i>
+                <span class="font-medium">Icône culinaire</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="animal-card bg-white rounded-2xl shadow-md overflow-hidden"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Chat Botté"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                Contes
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Le Chat Botté
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Personnage mythique des contes européens.
+              </p>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-700 mb-2">Références :</h4>
+                <ul
+                  class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                >
+                  <li>Conte : Charles Perrault (1697)</li>
+                  <li>Film : "Shrek 2" (2004) - version moderne</li>
+                  <li>Opéra : "Le chat botté" de César Cui (1913)</li>
+                  <li>Ballet : Adaptations chorégraphiques</li>
+                </ul>
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-hat-wizard text-purple-400 mr-1"></i>
+                <span class="font-medium">Personnage légendaire</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="animal-card bg-white rounded-2xl shadow-md overflow-hidden"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt="Grumpy Cat"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                Internet
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Grumpy Cat</h3>
+              <p class="text-gray-600 mb-4">
+                Le chat le plus célèbre d'Internet au visage renfrogné.
+              </p>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-700 mb-2">Références :</h4>
+                <ul
+                  class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                >
+                  <li>Meme : Viral en 2012</li>
+                  <li>Livre : "Grumpy Cat: A Grumpy Book" (2013)</li>
+                  <li>Film : "Grumpy Cat's Worst Christmas Ever" (2014)</li>
+                  <li>Revenus : 100 millions de dollars en merchandising</li>
+                </ul>
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-laptop-code text-pink-400 mr-1"></i>
+                <span class="font-medium">Phénomène internet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Ours -->
+      <section id="ours" class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="bg-orange-100 p-3 rounded-full mr-4">
+            <i class="fas fa-paw text-orange-600 text-2xl"></i>
+          </div>
+          <h2 class="title-font text-3xl font-bold text-gray-800">
+            Les Ours dans la Culture
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="animal-card bg-white rounded-2xl shadow-md overflow-hidden"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Winnie l'ourson"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                Disney
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                Winnie l'Ourson
+              </h3>
+              <p class="text-gray-600 mb-4">
+                L'ourson en peluche le plus célèbre du monde.
+              </p>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-700 mb-2">Références :</h4>
+                <ul
+                  class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                >
+                  <li>Livre : A.A. Milne (1926)</li>
+                  <li>Disney : Franchise depuis 1966</li>
+                  <li>Film : "Bienvenue chez les Pooh" (2011)</li>
+                  <li>Origine : Basé sur un vrai ourson du zoo de Londres</li>
+                </ul>
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-honey-pot text-yellow-400 mr-1"></i>
+                <span class="font-medium">Amateur de miel</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="animal-card bg-white rounded-2xl shadow-md overflow-hidden"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt="Paddington"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                Littérature
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Paddington</h3>
+              <p class="text-gray-600 mb-4">
+                L'ours péruvien émigré à Londres.
+              </p>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-700 mb-2">Références :</h4>
+                <ul
+                  class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                >
+                  <li>Livre : Michael Bond (1958)</li>
+                  <li>Films : "Paddington" (2014) et "Paddington 2" (2017)</li>
+                  <li>Statue : Gare de Paddington, Londres</li>
+                  <li>Musée : Exposition permanente au Musée de Londres</li>
+                </ul>
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-suitcase text-red-400 mr-1"></i>
+                <span class="font-medium">Voyageur</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="animal-card bg-white rounded-2xl shadow-md overflow-hidden"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Baloo"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+              >
+                Animation
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Baloo</h3>
+              <p class="text-gray-600 mb-4">
+                L'ours paresseux du "Livre de la Jungle".
+              </p>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-700 mb-2">Références :</h4>
+                <ul
+                  class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                >
+                  <li>Livre : Rudyard Kipling (1894)</li>
+                  <li>Disney : "Le Livre de la Jungle" (1967)</li>
+                  <li>Film live : "Le Livre de la Jungle" (2016)</li>
+                  <li>Chanson : "Il en faut peu pour être heureux"</li>
+                </ul>
+              </div>
+              <div class="flex items-center text-sm text-gray-500">
+                <i class="fas fa-music text-blue-400 mr-1"></i>
+                <span class="font-medium">Philosophie du bonheur</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Actualités et Faits Divers -->
+      <section class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="bg-red-100 p-3 rounded-full mr-4">
+            <i class="fas fa-newspaper text-red-600 text-2xl"></i>
+          </div>
+          <h2 class="title-font text-3xl font-bold text-gray-800">
+            Actualités Animalières
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Actualité 1 -->
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+            <div class="md:flex">
+              <div class="md:w-1/3 relative">
+                <img
+                  src="https://images.unsplash.com/photo-1579168765467-3b235f938439?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Chien astronaut"
+                  class="h-full w-full object-cover"
+                />
+                <div
+                  class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+                >
+                  Espace
+                </div>
+              </div>
+              <div class="md:w-2/3 p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">
+                  Laïka : Premier être vivant dans l'espace
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  La chienne russe qui a marqué l'histoire spatiale.
+                </p>
+                <div class="mb-4">
+                  <h4 class="font-semibold text-gray-700 mb-2">
+                    Faits Historiques :
+                  </h4>
+                  <ul
+                    class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                  >
+                    <li>3 novembre 1957 : Lancement de Spoutnik 2</li>
+                    <li>Premier être vivant en orbite terrestre</li>
+                    <li>Monument érigé à Moscou en 2008</li>
+                    <li>Album musical "Laïka" du groupe M83 (2005)</li>
+                  </ul>
+                </div>
+                <span
+                  class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm"
+                >
+                  Histoire spatiale
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actualité 2 -->
+          <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+            <div class="md:flex">
+              <div class="md:w-1/3 relative">
+                <img
+                  src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Tigre"
+                  class="h-full w-full object-cover"
+                />
+                <div
+                  class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold"
+                >
+                  Conservation
+                </div>
+              </div>
+              <div class="md:w-2/3 p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">
+                  Shere Khan : De la fiction à la réalité
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Les tigres dans la culture et leur conservation.
+                </p>
+                <div class="mb-4">
+                  <h4 class="font-semibold text-gray-700 mb-2">
+                    Actualité 2023 :
+                  </h4>
+                  <ul
+                    class="text-sm text-gray-600 list-disc list-inside space-y-1"
+                  >
+                    <li>
+                      Film : "Le Livre de la Jungle" - personnage emblématique
+                    </li>
+                    <li>Statut : Espèce en danger critique d'extinction</li>
+                    <li>
+                      Initiative : TX2 - doubler la population de tigres
+                      sauvages
+                    </li>
+                    <li>
+                      Symbole : Animal national de plusieurs pays asiatiques
+                    </li>
+                  </ul>
+                </div>
+                <span
+                  class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm"
+                >
+                  Protection animale
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Curiosités -->
+      <section class="mb-16">
+        <div class="flex items-center mb-8">
+          <div class="bg-purple-100 p-3 rounded-full mr-4">
+            <i class="fas fa-lightbulb text-purple-600 text-2xl"></i>
+          </div>
+          <h2 class="title-font text-3xl font-bold text-gray-800">
+            Curiosités Culturelles
+          </h2>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl shadow-lg p-8"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div
+                class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
+              >
+                <i class="fas fa-crown text-purple-500 text-2xl"></i>
+              </div>
+              <h3 class="font-bold text-gray-800 mb-2">Animaux Royaux</h3>
+              <p class="text-gray-600 text-sm">
+                Les corgis de la reine Elizabeth II sont devenus une icône
+                britannique, apparaissant même dans l'ouverture des Jeux
+                Olympiques de Londres 2012.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
+              >
+                <i class="fas fa-video text-blue-500 text-2xl"></i>
+              </div>
+              <h3 class="font-bold text-gray-800 mb-2">Oscar Animal</h3>
+              <p class="text-gray-600 text-sm">
+                Uggie, le jack russell de "The Artist" (2011), a reçu le Palm
+                Dog Award à Cannes et a même lancé une campagne pour un Oscar
+                animalier.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md"
+              >
+                <i class="fas fa-gamepad text-green-500 text-2xl"></i>
+              </div>
+              <h3 class="font-bold text-gray-800 mb-2">Jeux Vidéo</h3>
+              <p class="text-gray-600 text-sm">
+                Le renard dans "Star Fox" (1993), Sonic le hérisson, ou même les
+                Pokémon - les animaux dominent l'univers du gaming depuis des
+                décennies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="container mx-auto px-4 py-8 mb-16">
+      <div
+        class="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl shadow-xl p-8 text-white"
+      >
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="title-font text-3xl font-bold mb-4">Restez informé !</h2>
+          <p class="mb-6">
+            Recevez chaque mois notre sélection d'actualités animalières
+            culturelles.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input
+              type="email"
+              placeholder="Votre email"
+              class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button
+              class="bg-white text-blue-600 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              S'abonner <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+          </div>
+          <p class="text-sm mt-4 text-blue-100">
+            100% culture, 0% spam. Désabonnement à tout moment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer léger -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-paw text-green-400 text-2xl"></i>
+              <h3 class="title-font text-2xl font-bold">CultureG</h3>
+            </div>
+            <p class="text-gray-400 mt-2">
+              Explorons ensemble la faune culturelle
+            </p>
+          </div>
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="fab fa-facebook text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors"
+            >
+              <i class="fab fa-youtube text-xl"></i>
+            </a>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>© 2023 CultureG - Tous droits réservés | Images via Unsplash</p>
+          <p class="mt-2 text-sm">Ce site est à but éducatif et culturel</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Animation simple au scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".animal-card");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        cards.forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          observer.observe(card);
+        });
+
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

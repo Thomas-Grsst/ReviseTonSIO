@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CEJM - Chapitres</title>
+    <style>
+      /* Styles généraux */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* En-tête */
+      header {
+        background: linear-gradient(135deg, #1a2a6c, #2a3a7c);
+        color: white;
+        padding: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-icon {
+        margin-right: 10px;
+        font-size: 2rem;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 1.5rem;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #a8d0e6;
+      }
+
+      /* Section de présentation */
+      .hero {
+        padding: 3rem 0;
+        text-align: center;
+        background-color: white;
+        margin-bottom: 2rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #1a2a6c;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #555;
+      }
+
+      /* Grille des chapitres */
+      .chapters {
+        padding: 2rem 0;
+      }
+
+      .chapters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .chapter-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+      }
+
+      .chapter-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .chapter-icon {
+        height: 120px;
+        background: linear-gradient(135deg, #1a2a6c, #2a3a7c);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+      }
+
+      .chapter-content {
+        padding: 1.5rem;
+      }
+
+      .chapter-content h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+        color: #1a2a6c;
+      }
+
+      .chapter-content p {
+        color: #666;
+        margin-bottom: 1.2rem;
+      }
+
+      .chapter-link {
+        display: inline-block;
+        background-color: #1a2a6c;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .chapter-link:hover {
+        background-color: #2a3a7c;
+      }
+
+      /* Pied de page */
+      footer {
+        background-color: #1a2a6c;
+        color: white;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 1.5rem;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: #ccc;
+        margin-bottom: 0.5rem;
+        display: block;
+        text-decoration: none;
+      }
+
+      .footer-section a:hover {
+        color: white;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid #2a3a7c;
+        margin-top: 1.5rem;
+        color: #ccc;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        nav ul {
+          margin-top: 1rem;
+          justify-content: center;
+        }
+
+        nav ul li {
+          margin: 0 0.8rem;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- En-tête -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <span class="logo-icon">📚</span>
+            <span>CEJM - Culture Économique, Juridique et Managériale</span>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="cejm.html" style="color: #a8d0e6">CEJM</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Section de présentation -->
+    <section class="hero">
+      <div class="container">
+        <h1>Culture Économique, Juridique et Managériale</h1>
+        <p>
+          Découvrez tous les chapitres du programme CEJM. Cliquez sur une carte
+          pour accéder au contenu détaillé du chapitre.
+        </p>
+      </div>
+    </section>
+
+    <!-- Grille des chapitres -->
+    <section class="chapters">
+      <div class="container">
+        <div class="chapters-grid">
+          <!-- Chapitre 1 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap1.html'"
+          >
+            <div class="chapter-icon">💰</div>
+            <div class="chapter-content">
+              <h3>Chapitre 1 : Les fondements de l'économie</h3>
+              <p>
+                Découvrez les concepts de base de l'économie, les mécanismes de
+                marché et les différents agents économiques
+              </p>
+              <a href="/CEJM/chap1.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 2 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap2.html'"
+          >
+            <div class="chapter-icon">⚖️</div>
+            <div class="chapter-content">
+              <h3>Chapitre 2 : Le fonctionnement des marchés</h3>
+              <p>
+                Marché, concurrence, coopération, dysfonctionnement de marché
+              </p>
+              <a href="CEJM/chap2.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 3 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap3.html'"
+          >
+            <div class="chapter-icon">👥</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 3 : Les contraintes passés par les entreprises avec ses
+                partenaires
+              </h3>
+              <p>
+                Pourparlers, libertés contractuelles, rupture, formation contrat
+              </p>
+              <a href="/CEJM/chap3.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 4 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap4.html'"
+          >
+            <div class="chapter-icon">📊</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 4 : Les finalités de l'entreprise et sa performance
+              </h3>
+              <p>
+                Finalités, RSE, parties prenantes, contre-pouvoirs, performance,
+                efficacité, efficience, indicateurs, tableau de bord
+              </p>
+              <a href="/CEJM/chap4.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 5 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap5.html'"
+          >
+            <div class="chapter-icon">📝</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 5 : De la création à la pérennité de l'entreprise
+              </h3>
+              <p>
+                Création entreprise, logique entrepreunariale, logique
+                managériale, destruction créatrice
+              </p>
+              <a href="/CEJM/chap5.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 6 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap6.html'"
+          >
+            <div class="chapter-icon">🚀</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 6 : Le rôle de l'État et de sa politique économique
+              </h3>
+              <p>
+                Politique économique, déséquilibre, carré magique de Kaldor,
+                croissance économique, développement durable/humain
+              </p>
+              <a href="/CEJM/chap6.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 7 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap7.html'"
+          >
+            <div class="chapter-icon">🌍</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 7 : L'influence des politiques économiques sur
+                l'entreprise
+              </h3>
+              <p>
+                Taux imposition, consentement à l'impôts, Contraintes exterieur,
+                règles budgétaire, dépenses publiques
+              </p>
+              <a href="/CEJM/chap7.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 8 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap8.html'"
+          >
+            <div class="chapter-icon">🛡️</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 8 : La régulation des activités économique par le droit
+              </h3>
+              <p>
+                ADLC, entente, abus de position dominante, propriété
+                industrielle, brevet, marque
+              </p>
+              <a href="/CEJM/chap8.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 9 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap9.html'"
+          >
+            <div class="chapter-icon">🌳​</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 9 : L'influence de l'environnement sur l'entreprise
+              </h3>
+              <p>
+                Micro et macro environnement, PESTEL, opportunités, menaces,
+                veille, innovation
+              </p>
+              <a href="/CEJM/chap9.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+          <!-- Chapitre 10 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap10.html'"
+          >
+            <div class="chapter-icon">⚒️</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 10 : Les facteurs économique et kes choix de production
+              </h3>
+              <p>
+                Facteurs de production, combinaison productive, cout de
+                production, productivité, gains de productivité, taux d'intérêt,
+                chaine de valeur, impartition
+              </p>
+              <a href="/CEJM/chap10.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 11 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap11.html'"
+          >
+            <div class="chapter-icon">📌​</div>
+            <div class="chapter-content">
+              <h3>Chapitre 11 : Le choix d'une structure juridique adaptée</h3>
+              <p>
+                Patrimoine, société, personne moral, apports, associé statut
+                social, statut fiscal
+              </p>
+              <a href="/CEJM/chap11.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 12 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap12.html'"
+          >
+            <div class="chapter-icon">📜</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 12 : Les réponses du droits faces aux risques liés à
+                l'activitée de l'entreprise
+              </h3>
+              <p>
+                Responsabilité civile, pénal, contractuelle,
+                extracontractuelles, produits défectueux, dommages
+              </p>
+              <a href="/CEJM/chap12.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 13 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap13.html'"
+          >
+            <div class="chapter-icon">📜</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 13 : Les processus de l'entreprise, les styles de
+                management et contre-pouvoirs
+              </h3>
+              <p>
+                Processus, zones incertitude, influences des actions, styles
+                management consultatif, participatif, parternaliste, autoritaire
+              </p>
+              <a href="/CEJM/chap13.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 14 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap14.html'"
+          >
+            <div class="chapter-icon">📜</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 14 : Comment le diagnostic éclaire-t-il les choix
+                stratégiques de l'entreprise ?
+              </h3>
+              <p>
+                Stratégie délibéré/émergente, forces concurrentielles, chaine de
+                valeur, ressources tangibles/intangibles, compétences
+                distinctives, diagnostic interne/externe, démarche stratégique
+              </p>
+              <a href="/CEJM/chap14.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 15 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap15.html'"
+          >
+            <div class="chapter-icon">📜</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 15 : Quels sont les choix stratégiques opérés par
+                l'entreprise
+              </h3>
+              <p>
+                Stratégie globale, spécialisation, externalisation,
+                diversification, intégrations, DAS, modalités de croissance
+              </p>
+              <a href="/CEJM/chap15.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 16 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap16.html'"
+          >
+            <div class="chapter-icon">📜</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 16 : Quelle est l'incidence du numérique sur le
+                management
+              </h3>
+              <p>
+                SI, risques du SI, mécanismes de coordination, résistance au
+                changement
+              </p>
+              <a href="/CEJM/chap16.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 17 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap17.html'"
+          >
+            <div class="chapter-icon">📜</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 17 : Dans quelle mesure le droit répond-il aux
+                questions posées pour le développement
+              </h3>
+              <p>
+                Nom de domaine, INPI, action en contrefaçon/concurrence
+                déloyale, BDD, droit auteur/producteur, contrat electronique
+              </p>
+              <a href="/CEJM/chap17.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 18 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap18.html'"
+          >
+            <div class="chapter-icon">📜</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 18 : Comment le numérique transforme-t-il
+                l'environnement des entreprises ?
+              </h3>
+              <p>
+                Economie usage, économie plateforme, désintermédiation, yield
+                management, freemium, économmie collaboration, externalité de
+                réseau, place de marché élèctronique
+              </p>
+              <a href="/CEJM/chap18.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+
+          <!-- Chapitre 19 -->
+          <div
+            class="chapter-card"
+            onclick="window.location.href='/CEJM/chap19.html'"
+          >
+            <div class="chapter-icon">📜</div>
+            <div class="chapter-content">
+              <h3>
+                Chapitre 19 : QUel est l'impact des mutations du travail sur
+                l'emploi et les conditions de travail ?
+              </h3>
+              <p>
+                GPEC, flexibilité quantitative/qualitative, sous-traitance de
+                capacité/spécialité
+              </p>
+              <a href="/CEJM/chap19.html" class="chapter-link"
+                >Accéder au chapitre</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
